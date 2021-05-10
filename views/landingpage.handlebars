@@ -1,19 +1,75 @@
-<h1>hello world</h1>
-
-<form class="login-form">
-    <fieldset class="uk-fieldset">
-
-        <legend class="uk-legend">Log In Form</legend>
-
-        <div class="uk-margin">
-            <input class="uk-input" id="email-login" type="text" placeholder="Email">
+<div class="uk-cover-container uk-height-medium">
+        <img src="tp.jpeg" alt="" uk-cover>
+        <div class="uk-overlay uk-light uk-position-center-left">
+            <h1 class="uk-heading-medium" style="color:darkblue">TP to You</h1>
         </div>
-        <div class="uk-margin">
-            <input class="uk-input" id="password-login" type="text" placeholder="Password">
-        </div>
-        <button class="uk-button uk-button-default">Log In</button>
-    
-    </fieldset>
-</form>
+    </div>
+    <!-- LOGIN BUTTON -->
+    <button class="uk-button uk-button-default uk-margin-small-right uk-width-1-1" type="button" uk-toggle="target: #offcanvas-usage">Login</button>
+    <div id="offcanvas-usage" uk-offcanvas>
+        <div class="uk-offcanvas-bar">
 
-<script src="../public/js/login.js"></script>
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <div class="uk-container">
+            <form class="uk-margin-medium-top">
+                <fieldset class="uk-fieldset">
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="Email">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="Password">
+                    </div>
+                    <button class="uk-button uk-button-default">Log In</button>
+                </fieldset>
+            </form>
+        </div>
+        </div>
+    </div>
+    <div class="uk-container uk-margin">
+        <p>The Toilet Paper premier service to your doorstep.  We never run out, we always have inventory.  Comes on a monthly 
+            subscription with all the levels of comfort to choose from.
+        </p>
+    </div>
+
+    <div class="uk-container">
+        <div class="uk-child-width-1-2@m" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-top">
+                        <img src="tp-placeholder.jpeg" alt="">
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">Premium</h3>
+                        <p>Our premium top of the line 5-ply.  So soft you'll feel like royalty.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-child-width-1-2@m" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-top">
+                        <img src="tp-placeholder.jpeg" alt="">
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">Deluxe</h3>
+                        <p>Deluxe softness. Proprietary and ultra comfortable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-child-width-1-2@m" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-top">
+                        <img src="tp-placeholder.jpeg" alt="">
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">Standard</h3>
+                        <p>Our standard issue, still better than the competition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
