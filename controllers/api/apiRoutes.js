@@ -58,10 +58,12 @@ router.post('/login', async (req, res) => {
         city: req.body.city,
         state: req.body.state,
         zipcode: req.body.zipcode
-      })}
+      })
+        res.status(200).json();
+    }
 
-    catch(err) {
-      res.json(err);
+       catch(err) {
+       res.json(err);
   }})
 
 module.exports = router;
