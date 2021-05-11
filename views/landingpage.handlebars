@@ -11,15 +11,15 @@
 
         <button class="uk-offcanvas-close" type="button" uk-close></button>
         <div class="uk-container">
-            <form class="uk-margin-medium-top">
+            <form class="uk-margin-medium-top" id="login-form">
                 <fieldset class="uk-fieldset">
                     <div class="uk-margin">
-                        <input class="uk-input" type="text" placeholder="Email">
+                        <input id="email-login" class="uk-input" type="text" placeholder="Email">
                     </div>
                     <div class="uk-margin">
-                        <input class="uk-input" type="text" placeholder="Password">
+                        <input id="password-login" class="uk-input" type="text" placeholder="Password">
                     </div>
-                    <button class="uk-button uk-button-default">Log In</button>
+                    <button class="uk-button uk-button-default" id="login">Log In</button>
                 </fieldset>
             </form>
         </div>
@@ -72,4 +72,6 @@
             </div>
         </div>
     </div>
+
+<script src="/js/login.js"></script>
 
