@@ -29,7 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-// User.create({username: 'hello', password: 'q', address:'123 main'})
+User.create({username: 'hello', password: 'q', address:'123 main'})
+
+User.create({username: "Zach", password: "qwerty1", address: "2323 jordan ave"})
 
 // change to true to rewrite tables in db
 sequelize.sync({ force: false }).then(() => {
