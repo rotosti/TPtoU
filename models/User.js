@@ -44,7 +44,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         }, 
-        streetadress: {
+        streetaddress: {
             type: DataTypes.STRING,
             allowNull: false,
         }, 
