@@ -1,38 +1,70 @@
 <div class="uk-cover-container uk-height-medium">
-        <img src="/images/tp.jpeg" alt="" uk-cover>
-        <div class="uk-overlay uk-light uk-position-center-left">
-            <h1 class="uk-heading-medium" style="color:darkblue">TP to You</h1>
-        </div>
-    </div>
-    <!-- LOGIN BUTTON -->
-    <button class="uk-button uk-button-default uk-margin-small-right uk-width-1-1" type="button" uk-toggle="target: #offcanvas-usage">Login</button>
-    <div id="offcanvas-usage" uk-offcanvas>
-        <div class="uk-offcanvas-bar">
+  <img src="/images/tp.jpeg" alt="" uk-cover />
+  <div class="uk-overlay uk-light uk-position-center-left">
+    <h1 class="uk-heading-medium" style="color:darkblue">TP to You</h1>
+  </div>
+</div>
+<!-- LOGIN BUTTON -->
+<button
+  class="uk-button uk-button-default uk-margin-small-right uk-width-1-1"
+  type="button"
+  uk-toggle="target: #offcanvas-usage"
+>Login</button>
+<div id="offcanvas-usage" uk-offcanvas>
+  <div class="uk-offcanvas-bar">
 
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
-        <div class="uk-container">
-            <form class="uk-margin-medium-top" id="login-form">
-                <fieldset class="uk-fieldset">
-                    <div class="uk-margin">
-                        <input id="email-login" class="uk-input" type="text" placeholder="Email">
-                    </div>
-                    <div class="uk-margin">
-                        <input id="password-login" class="uk-input" type="text" placeholder="Password">
-                    </div>
-                    <button class="uk-button uk-button-default" id="login">Log In</button>
-                </fieldset>
-            </form>
-        </div>
-        </div>
-    </div>
-    <div class="uk-container uk-margin">
-        <p>The Toilet Paper premier service to your doorstep.  We never run out, we always have inventory.  Comes on a monthly 
-            subscription with all the levels of comfort to choose from.
-        </p>
-    </div>
-
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
     <div class="uk-container">
-        <div class="uk-child-width-1-2@m" uk-grid>
+      <form class="uk-margin-medium-top" id="login-form">
+        <fieldset class="uk-fieldset">
+          <div class="uk-margin">
+            <input
+              id="email-login"
+              class="uk-input"
+              type="text"
+              placeholder="Email"
+            />
+          </div>
+          <div class="uk-margin">
+            <input
+              id="password-login"
+              class="uk-input"
+              type="text"
+              placeholder="Password"
+            />
+          </div>
+          <button class="uk-button uk-button-default" id="login">Log In</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="uk-container uk-margin">
+  <p>The Toilet Paper premier service to your doorstep. We never run out, we
+    always have inventory. Comes on a monthly subscription with all the levels
+    of comfort to choose from.
+  </p>
+</div>
+
+<div class="uk-container">
+
+  {{#each tiers}}
+    <div class="uk-child-width-1-2@m" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-top">
+                        <img src="/images/tp-placeholder.jpeg" alt="">
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">{{tier_name}}</h3>
+                        {{!-- <p>Our premium top of the line 5-ply.  So soft you'll feel like royalty.</p> --}}
+                        <p>{{tier_description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+  {{/each}}
+  {{! <div class="uk-child-width-1-2@m" uk-grid>
             <div>
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-media-top">
@@ -70,9 +102,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div><button id="sign-up-button" class="uk-button uk-button-default uk-margin-small-right uk-width-1-1" type="button">Sign Up</button>
+        </div> }}
+</div>
+<button
+  id="sign-up-button"
+  class="uk-button uk-button-default uk-margin-small-right uk-width-1-1"
+  type="button"
+>Sign Up</button>
 
 <script src="/js/login.js"></script>
 <script src="/js/signup.js"></script>
-

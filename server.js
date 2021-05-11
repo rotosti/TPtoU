@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
-const { User } = require('./models');
+const { User, SubTier } = require('./models');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -32,8 +32,10 @@ app.use(routes);
 
 // User.create({username: 'hello', password: 'q', address:'123 main'})
 
-// User.create({username: "Zach", password: "qwerty1", address: "2323 jordan ave"})
+User.create({email: "Zach", password: "qwerty1", firstname: "zach", lastname: "duty", streetaddress: "2323 jordan ave", zipcode: "60647", state: "IL"})
 
+SubTier.create({tier_name: "premium", price: 40.00})
+SubTier.create({tier_name: "deluxe", price: 60.00})
 // change to true to rewrite tables in db
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
