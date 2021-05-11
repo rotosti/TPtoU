@@ -47,13 +47,14 @@ router.post('/login', async (req, res) => {
   });
 
   router.post('/createaccount', (req, res) => {
+      console.log('request: ',req.body);
     try {
       User.create({ 
         email: req.body.email,
         password: req.body.password,
         firstname: req.body.firstname,
         lastname: req.body.lastname,
-        address: req.body.address,
+        streetaddress: req.body.address,
         city: req.body.city,
         state: req.body.state,
         zipcode: req.body.zipcode

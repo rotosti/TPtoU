@@ -29,10 +29,6 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        address: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -45,7 +41,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         }, 
-        streetadress: {
+        streetaddress: {
             type: DataTypes.STRING,
             allowNull: false,
         }, 
