@@ -33,6 +33,7 @@ SubTier.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'subtier',
+    timestamps: false,
   }
 );
 
