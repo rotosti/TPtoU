@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
+const { User } = require('./models');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -28,7 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+// User.create({username: 'hello', password: 'q', address:'123 main'})
+
 // change to true to rewrite tables in db
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
