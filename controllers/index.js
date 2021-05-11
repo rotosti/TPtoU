@@ -4,6 +4,6 @@ const appRoutes = require('./appRoutes/appRoutes.js');
 const apiRoutes = require('./api/apiRoutes.js');
 
 router.use('/', appRoutes);
-router.use('/', apiRoutes);
+router.use('/api', apiRoutes);
 
 module.exports = router;
