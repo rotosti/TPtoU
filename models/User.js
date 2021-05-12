@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+const { create } = require('./Product');
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -16,19 +17,15 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        // tierName: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     references: {
-        //       model: 'subtier',
-        //       key: 'tierName',
-        //     },
-        // },
-        email: {
-            type: DataTypes.STRING,
+        tier_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
+            references: {
+              model: 'SubTier',
+              key: 'id',
+            },
         },
-        address: {
+        email: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -46,7 +43,7 @@ User.init(
         }, 
         streetaddress: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false, 
         }, 
         zipcode: {
             type: DataTypes.INTEGER,
@@ -72,5 +69,7 @@ User.init(
         modelName: 'user',
     }
 );
+
+
 
 module.exports = User;

@@ -4,14 +4,14 @@ const User = require('./User');
 
 
 
-SubTier.hasMany(Product, {
-    foreignKey: 'product_id',
-});
-
-// Product.hasOne(SubTier,{
+// SubTier.hasMany(Product, {
 //     foreignKey: 'id',
-
 // });
+
+Product.hasOne(SubTier,{
+    foreignKey: 'product_id',
+
+});
 
 User.hasOne(SubTier, {
     foreignKey: 'id',
