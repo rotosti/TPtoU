@@ -12,7 +12,11 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/signup", async (req, res) => {
-  res.render("signup");
+  const tiers = await Subtier.findAll({
+    raw: true,
+  });
+
+  res.render("signup", { tiers: tiers });
 });
 
 router.get("/dashboard", withAuth, (req, res) => {
