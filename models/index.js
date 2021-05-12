@@ -1,24 +1,27 @@
 const Product = require('./Product');
-const SubTier = require('./SubTier');
+const Subtier = require('./Subtier');
 const User = require('./User');
 
 
+Product.belongsTo(Subtier,{
+    foreignKey: 'tier_id',
+});
 
-// SubTier.hasMany(Product, {
+// Product.hasMany(Product, {
 //     foreignKey: 'id',
 // });
 
-Product.hasOne(SubTier,{
-    foreignKey: 'product_id',
-
-});
-
-User.hasOne(SubTier, {
-    foreignKey: 'id',
-});
-
-// SubTier.hasMany(User,{
-//    foreignKey: {allowNull : false } 
+// Subtier.hasMany(User,{
+//    foreignKey: 'tier_id'
+// //    through: {
+// //     model: Subtier,
+// //     unique: false
+// //   },
 // })
 
-module.exports = { Product, SubTier, User };
+User.belongsTo(Subtier, {
+    foreignKey: 'tier_id',
+});
+
+
+module.exports = { Product, Subtier, User };
