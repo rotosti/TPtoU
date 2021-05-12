@@ -19,8 +19,17 @@ router.get("/signup", async (req, res) => {
   res.render("signup", { tiers: tiers });
 });
 
-router.get("/dashboard", withAuth, (req, res) => {
-  res.render("dashboard");
+router.get("/dashboard", withAuth, async (req, res) => {
+  const userData = await User.findByPk(User.id);
+  const currentSub = await User.findByPk(User.tier_id);
+  const notSub = await Subtier.findAll(
+    { 
+      attributes: 
+      {exclude: [currentSub]},
+    },
+  );
+
+  res.render("dashboard", {userData, currentSub, notSub});
 });
 
 router.get("/account", withAuth, async (req, res) => {
