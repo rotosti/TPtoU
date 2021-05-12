@@ -27,9 +27,9 @@
             <input id="zipcode" class="uk-input" type="text" placeholder="Zipcode">
         </div>
         <select id="tier" class="uk-select">
-            <option>Premium</option>
-            <option>Deluxe</option>
-            <option>Standard</option>
+            {{#each tiers}}
+            <option value='{{id}}'>{{tier_name}} / ${{price}} a month</option>
+            {{/each}}
         </select>
         <button type="submit" class="uk-button uk-button-default" id="create-account">Create Account</button>
     </form>
