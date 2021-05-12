@@ -60,8 +60,9 @@ router.post("/createaccount", (req, res) => {
       city: req.body.city,
       state: req.body.state,
       zipcode: req.body.zipcode,
+      tier_id: req.body.tierchoice
     });
-    res.status(200).json();
+    res.status(200).end();
   } catch (err) {
     res.json(err);
   }

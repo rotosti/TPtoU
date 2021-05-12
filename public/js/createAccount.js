@@ -9,7 +9,7 @@ const createAccountFormHandler = async (event) => {
     const city = document.querySelector('#city').value.trim();
     const state = document.querySelector('#state').value.trim();
     const zipcode = document.querySelector('#zipcode').value.trim();
-    const tierchoice = document.querySelector('#tier_id').value();
+    const tierchoice = document.querySelector('#tier_id').value;
 
     console.log(email);
 
