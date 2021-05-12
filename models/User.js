@@ -21,7 +21,7 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-              model: 'SubTier',
+              model: 'subtier',
               key: 'id',
             },
         },
@@ -52,7 +52,7 @@ User.init(
         state: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
+        }
     },
 
     {

@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const withAuth = require("../../utils/withAuth");
-const { User, SubTier } = require("../../models");
+const { User, Subtier } = require("../../models");
 
 router.get("/", async (req, res) => {
-  const tiers = await SubTier.findAll({
+  const tiers = await Subtier.findAll({
     raw: true,
   });
 

@@ -18,7 +18,16 @@ Product.init(
     image: {
       type: DataTypes.BLOB,
       allowNull: false,
+    },
+    tier_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'subtier',
+        key: 'id',
+      }
     }
+// },
   },
   {
     sequelize,

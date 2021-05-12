@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class SubTier extends Model {}
+class Subtier extends Model {}
 
-SubTier.init(
+Subtier.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -23,14 +23,14 @@ SubTier.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-    product_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'product',
-          key: 'id',
-        },
-      }
+  //   product_id: {
+  //       type: DataTypes.INTEGER,
+  //       allowNull: false,
+  //       references: {
+  //         model: 'product',
+  //         key: 'id',
+  //       }
+  //     }
   },
   {
     sequelize,
@@ -41,4 +41,4 @@ SubTier.init(
   }
 );
 
-module.exports = SubTier;
+module.exports = Subtier;
