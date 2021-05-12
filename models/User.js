@@ -17,14 +17,14 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        // tierName: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     references: {
-        //       model: 'subtier',
-        //       key: 'tierName',
-        //     },
-        // },
+        tier_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+              model: 'SubTier',
+              key: 'id',
+            },
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -43,7 +43,7 @@ User.init(
         }, 
         streetaddress: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false, 
         }, 
         zipcode: {
             type: DataTypes.INTEGER,
@@ -73,3 +73,5 @@ User.init(
 
 
 module.exports = User;
+
+// upload 
