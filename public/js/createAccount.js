@@ -9,14 +9,14 @@ const createAccountFormHandler = async (event) => {
     const city = document.querySelector('#city').value.trim();
     const state = document.querySelector('#state').value.trim();
     const zipcode = document.querySelector('#zipcode').value.trim();
-    // add tier choice here
+    const tierchoice = document.querySelector('#tier_id').value();
 
     console.log(email);
 
-    if (email && password && firstname && lastname && address && city && state && zipcode) {
+    if (email && password && firstname && lastname && address && city && state && zipcode && tierchoice) {
         const response = await fetch('/api/createaccount', {
             method: 'POST',
-            body: JSON.stringify({email, password, firstname, lastname, address, city, state, zipcode}),
+            body: JSON.stringify({email, password, firstname, lastname, address, city, state, zipcode, tierchoice}),
             headers: {'Content-Type': 'application/json'},
         });
 

@@ -15,6 +15,10 @@ Subtier.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
