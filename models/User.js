@@ -21,7 +21,7 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-              model: 'SubTier',
+              model: 'subtier',
               key: 'id',
             },
         },
