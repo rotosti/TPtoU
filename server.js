@@ -37,6 +37,6 @@ app.use(routes);
 // SubTier.create({tier_name: "premium", price: 40.00})
 // SubTier.create({tier_name: "deluxe", price: 60.00})
 // change to true to rewrite tables in db
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
