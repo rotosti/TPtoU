@@ -16,7 +16,7 @@ Product.init(
       allowNull: false,
     },
     image: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     tier_id: {
@@ -25,7 +25,13 @@ Product.init(
       references: {
         model: 'subtier',
         key: 'id',
-      }
+      }, 
+      quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      
+      
     }
 // },
   },
