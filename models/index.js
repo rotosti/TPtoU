@@ -4,9 +4,9 @@ const User = require('./User');
 
 
 
-// SubTier.hasMany(Product, {
-//     foreignKey: 'id',
-// });
+SubTier.hasMany(Product, {
+    foreignKey: 'id',
+});
 
 Product.hasOne(SubTier,{
     foreignKey: 'product_id',
@@ -17,8 +17,8 @@ User.hasOne(SubTier, {
     foreignKey: 'id',
 });
 
-// SubTier.hasMany(User,{
-//    foreignKey: {allowNull : false } 
-// })
+SubTier.hasMany(User,{
+   foreignKey: { allowNull : false } 
+})
 
 module.exports = { Product, SubTier, User };
