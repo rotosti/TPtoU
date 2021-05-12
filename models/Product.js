@@ -25,15 +25,12 @@ Product.init(
       references: {
         model: 'subtier',
         key: 'id',
-      }, 
-      quantity: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      
-      
+      }
+    }, 
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     }
-// },
   },
   {
     sequelize,
