@@ -28,7 +28,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       {exclude: [currentSub]},
     },
   );
-
+    console.log("dashboard route working", userData, currentSub, notSub)
   res.render("dashboard", {userData, currentSub, notSub});
 });
 
