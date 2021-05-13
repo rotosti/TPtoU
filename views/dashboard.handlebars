@@ -36,14 +36,22 @@
 </div>
 
 <div>
-        <div class="uk-card uk-card-primary uk-flex-center uk-card-body">
-            <h3 id="curtier" class="uk-card-title uk-text-center uk-text-bolder uk-text-large">CURRENT TIER</h3>
-            <p class="uk-text-center uk-text-lead">{{currentSub.tier_name}}</p>
+
+        <div class="uk-card uk-card-primary uk-card-body">
+            <h3 class="uk-card-title">Current tier</h3>
+            <p>{{currentSub.tier_name}}</p>
+            <p>{{currentSub.description}}</p>
+            <p>${{currentSub.price}} per Month</p>
         </div> 
 
-<div class="uk-margin-medium-top">
-    <h2 class="uk-text-center">Change Current Tier</h2>
-    <button class="uk-button uk-button-default uk-margin-medium-bottom" id="account-update">Confirm Changes</button>
+<div class="uk-inline">
+        <select class="uk-select">
+            {{#each notSub}}
+            <option value='{{id}}'>{{tier_name}} / ${{price}} a month</option>
+            {{/each}}
+        </select>
+    <button class="uk-button uk-button-default" id="account-update">Confirm Changes</button>
+
 </div>
 
 <button class="uk-button uk-button-default" id="logout">Log Out</button>
