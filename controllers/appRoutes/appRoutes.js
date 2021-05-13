@@ -31,8 +31,10 @@ router.get("/dashboard", withAuth, async (req, res) => {
       {exclude: [currentSub]},
     },
   );
+
     console.log("dashboard route working", userData)
   res.render("dashboard", {userData:userData, currentSub, notSub});
+
 });
 
 router.get("/account", withAuth, async (req, res) => {
