@@ -26,7 +26,6 @@
             <td>{{userData.email}}</td>
             <td>{{userData.streetaddress}}</td>
             <td>{{userData.city}}</td>
-            <td>{{userData.firstname}}</td>
             <td>{{userData.state}}</td>
             <td>{{userData.zipcode}}</td>
         </tr>
@@ -40,11 +39,16 @@
         <div class="uk-card uk-card-primary uk-card-body">
             <h3 class="uk-card-title">Current tier</h3>
             <p>{{currentSub.tier_name}}</p>
+            <p>{{currentSub.description}}</p>
+            <p>${{currentSub.price}} per Month</p>
         </div> 
 
 <div class="uk-inline">
-    <button class="uk-button uk-button-default" type="button">Click</button>
-    <div uk-dropdown="mode: click">Change tier</div>
+        <select class="uk-select">
+            {{#each notSub}}
+            <option value='{{id}}'>{{tier_name}} / ${{price}} a month</option>
+            {{/each}}
+        </select>
     <button class="uk-button uk-button-default" id="account-update">Confirm Changes</button>
 </div>
 

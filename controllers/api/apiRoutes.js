@@ -3,11 +3,11 @@ const { User,Subtier, Product } = require("../../models");
 
 router.post("/login", async (req, res) => {
   try {
-    console.log("REQ .body!!!!!!!", req.body);
+    
     const userData = await User.findOne({
       where: { email: req.body.email },
     });
-    console.log("we found him, get him", userData);
+    
     if (!userData) {
       res
         .status(400)

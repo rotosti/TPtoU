@@ -1,8 +1,7 @@
 const router = require("express").Router();
 const withAuth = require("../../utils/withAuth");
 const { User, Subtier } = require("../../models");
-// const { raw } = require("express");
-// const { not } = require("sequelize/types/lib/operators");
+const { Op } = require("sequelize");
 
 router.get("/", async (req, res) => {
   const tiers = await Subtier.findAll({
@@ -25,15 +24,14 @@ router.get("/dashboard", withAuth, async (req, res) => {
   console.log("current user ",req.session);
   const userData = await User.findByPk(req.session.user_id,{raw:true});
   const currentSub = await Subtier.findByPk(userData.tier_id,{raw:true});
-  const notSub = await Subtier.findAll(
-    { 
-      raw:true,
-      attributes: 
-      {exclude: [currentSub]},
-    },
-  );
+  const notSub = await Subtier.findAll({
+    raw: true,
+    where: {
+      id: {[Op.not]: currentSub.id}
+    }
+  });
 
-    console.log("dashboard route working", userData)
+    console.log("dashboard route working", notSub)
   res.render("dashboard", {userData:userData, currentSub:currentSub, notSub:notSub});
 
 });
