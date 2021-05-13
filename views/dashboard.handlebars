@@ -2,52 +2,50 @@
 
 <div class="uk-container">
     <h2 class="uk-heading-medium">User Details</h2>
-    <table class="uk-table">
-       <tbody>
-
+    <table class="uk-table uk-table-striped">
+    <thead>
         <tr>
-            <td>First Name:</td>
-            <td>Hi</td>
+            <th>USER DETAILS </th>
+          
+     
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Address</td>
+            <td>City</td>
+            <td>State</td>
+            <td>Zipcode</td>
         </tr>
         <tr>
-            <td>Last Name:</td>
-            <td>Hi</td>
+            <td>{{userData.firstname}}</td>
+            <td>{{userData.lastname}}</td>
+            <td>{{userData.email}}</td>
+            <td>{{userData.streetaddress}}</td>
+            <td>{{userData.firstname}}</td>
+            <td>{{userData.state}}</td>
+            <td>{{userData.zipcode}}</td>
         </tr>
-        <tr>
-            <td>Email:</td>
-            <td>Hi</td>
-        </tr>
-        <tr>
-            <td>Address:</td>
-            <td>Hi</td>
-        </tr>
-        <tr>
-            <td>City:</td>
-            <td>Hi</td>
-        </tr>
-        <tr>
-            <td>State:</td>
-            <td>Hi</td>
-        </tr>
-        <tr>
-            <td>Zipcode:</td>
-            <td>Hi</td>
-        </tr>
-        </tbody> 
-    </table>
+        
+    </tbody>
+</table>
     <button class="uk-button uk-button-default" id="account-update">Save Account Updates</button>
-</div>
-<div class="uk-inline">
-    <button class="uk-button uk-button-default" type="button">Click</button>
-    <div uk-dropdown="mode: click">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
 </div>
 
 <div>
         <div class="uk-card uk-card-primary uk-card-body">
             <h3 class="uk-card-title">Primary</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Current tier</p>
         </div> 
 
+<div class="uk-inline">
+    <button class="uk-button uk-button-default" type="button">Click</button>
+    <div uk-dropdown="mode: click">Change tier</div>
+    <button class="uk-button uk-button-default" id="account-update">Confirm Changes</button>
+</div>
 
 <button class="uk-button uk-button-default" id="logout">Log Out</button>
 
