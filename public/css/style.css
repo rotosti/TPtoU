@@ -30,7 +30,7 @@ body {
     justify-content: center;
 }
 
-#create-account {
+/* #create-account {
     color: #D9D9D9;
     background-color:#353535 ;
     width: 20%;
@@ -39,4 +39,47 @@ body {
     margin: auto;
     display: flex;
     justify-content: center;
+} */
+
+#landingtop {
+    background-color: #353535;
+    color: #D9D9D9 ;
+}
+
+/* #landingbtn {
+    font-size: x-large;
+    color: #D9D9D9;
+    background-color:#353535 ;
+    width: 20%;
+    height: 10%;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+} */
+
+.uk-button {
+    color: #D9D9D9;
+    background-color:#353535 ;
+    width: 20%;
+    height: 10%;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#landinghead {
+    background-color: #353535;
+    color: #D9D9D9;
+}
+
+#imgg {
+    display: flex;
+    justify-content: center;
+}
+
+#login {
+    height: 50%;
+    width: 50%;
 }
