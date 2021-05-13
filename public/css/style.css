@@ -46,6 +46,16 @@ body {
     justify-content: center;
 }
 
+.uk-select {
+    color: black;
+    width: 250px;
+    height: 15%;
+    /* padding: 10px; */
+    /* margin: auto; */
+    /* display: flex;
+    justify-content: center; */
+}
+
 #landinghead {
     background-color: #353535;
     border-bottom: 2px solid black;
