@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User,Subtier, Product } = require("../../models");
 
 router.post("/login", async (req, res) => {
   try {
@@ -71,6 +71,24 @@ router.post("/createaccount", async (req, res) => {
     // res.status(200).end();
   } catch (err) {
     res.json(err);
+  }
+});
+
+router.get('/allSubtiers', async (req, res) => {
+  try {
+    const subtierData = await Subtier.findAll();
+    res.status(200).json(subtierData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/allProducts', async (req, res) => {
+  try {
+    const productData = await Product.findAll();
+    res.status(200).json(productData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
