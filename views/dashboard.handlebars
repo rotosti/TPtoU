@@ -1,7 +1,7 @@
-<h1 class="uk-heading-xlarge"> Account Dashboard</h1>
+<h1 class="uk-heading-xlarge uk-text-center" id="landinghead">Your Account</h1>
 
 <div class="uk-container">
-    <h2 class="uk-heading-medium">User Details</h2>
+    <h2 class="uk-heading-medium uk-text-center">Account Details</h2>
     <table class="uk-table uk-table-striped">
     <thead>
         <tr>
@@ -11,7 +11,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="uk-flex-center">
             <td>First Name</td>
             <td>Last Name</td>
             <td>Email</td>
@@ -20,32 +20,30 @@
             <td>State</td>
             <td>Zipcode</td>
         </tr>
-        <tr>
+        <tr class="uk-flex-center">
             <td>{{userData.firstname}}</td>
             <td>{{userData.lastname}}</td>
             <td>{{userData.email}}</td>
             <td>{{userData.streetaddress}}</td>
             <td>{{userData.city}}</td>
-            <td>{{userData.firstname}}</td>
             <td>{{userData.state}}</td>
             <td>{{userData.zipcode}}</td>
         </tr>
         
     </tbody>
 </table>
-    <button class="uk-button uk-button-default" id="account-update">Save Account Updates</button>
+    <button class="uk-button uk-button-default uk-margin-medium-bottom" id="account-update">Save Account Updates</button>
 </div>
 
 <div>
-        <div class="uk-card uk-card-primary uk-card-body">
-            <h3 class="uk-card-title">Current tier</h3>
-            <p>{{currentSub.tier_name}}</p>
+        <div class="uk-card uk-card-primary uk-flex-center uk-card-body">
+            <h3 id="curtier" class="uk-card-title uk-text-center uk-text-bolder uk-text-large">CURRENT TIER</h3>
+            <p class="uk-text-center uk-text-lead">{{currentSub.tier_name}}</p>
         </div> 
 
-<div class="uk-inline">
-    <button class="uk-button uk-button-default" type="button">Click</button>
-    <div uk-dropdown="mode: click">Change tier</div>
-    <button class="uk-button uk-button-default" id="account-update">Confirm Changes</button>
+<div class="uk-margin-medium-top">
+    <h2 class="uk-text-center">Change Current Tier</h2>
+    <button class="uk-button uk-button-default uk-margin-medium-bottom" id="account-update">Confirm Changes</button>
 </div>
 
 <button class="uk-button uk-button-default" id="logout">Log Out</button>
