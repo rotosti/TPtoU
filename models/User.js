@@ -52,6 +52,10 @@ User.init(
         state: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        city: {
+            type: DataTypes.STRING,
+            allowNull: false,
         }
     },
 
