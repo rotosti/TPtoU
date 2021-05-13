@@ -1,37 +1,38 @@
-<h1 class="uk-heading-xlarge">Create Account</h1>
+<h1 class="uk-heading-xlarge uk-text-center" id="signhead">Create Account</h1>
 
-<div class="uk-container">
+<div class="uk-container" id="formstyle">
     <form id="sign-up-form">
-        <div class="uk-margin">
-            <input id="email" class="uk-input" type="text" placeholder="Email">
+        <div class="uk-margin1">
+            <input id="email" class="uk-input uk-text-center" type="text" placeholder="Email">
         </div>
-        <div class="uk-margin">
-            <input id="password" class="uk-input" type="text" placeholder="Password">
+        <div class="uk-margin1">
+            <input id="password" class="uk-input uk-text-center" type="text" placeholder="Password">
         </div>
-        <div class="uk-margin">
-            <input id="firstname" class="uk-input" type="text" placeholder="First Name">
+        <div class="uk-margin1">
+            <input id="firstname" class="uk-input uk-text-center" type="text" placeholder="First Name">
         </div>
-        <div class="uk-margin">
-            <input id="lastname" class="uk-input" type="text" placeholder="Last Name">
+        <div class="uk-margin1">
+            <input id="lastname" class="uk-input uk-text-center" type="text" placeholder="Last Name">
         </div>
-        <div class="uk-margin">
-            <input id="address" class="uk-input" type="text" placeholder="Address">
+        <div class="uk-margin1">
+            <input id="address" class="uk-input uk-text-center" type="text" placeholder="Address">
         </div>
-        <div class="uk-margin">
-            <input id="city" class="uk-input" type="text" placeholder="City">
+        <div class="uk-margin1">
+            <input id="city" class="uk-input uk-text-center" type="text" placeholder="City">
         </div>
-        <div class="uk-margin">
-            <input id="state" class="uk-input" type="text" placeholder="State">
+        <div class="uk-margin1">
+            <input id="state" class="uk-input uk-text-center" type="text" placeholder="State">
         </div>
-        <div class="uk-margin">
-            <input id="zipcode" class="uk-input" type="text" placeholder="Zipcode">
+        <div class="uk-margin1">
+            <input id="zipcode" class="uk-input uk-text-center" type="text" placeholder="Zipcode">
         </div>
-        <select id="tier_id" class="uk-select">
+        <select id="tier_id1" class="uk-select">
             {{#each tiers}}
             <option value='{{id}}'>{{tier_name}} / ${{price}} a month</option>
             {{/each}}
         </select>
-        <button type="submit" class="uk-button uk-button-default" id="create-account">Create Account</button>
+        <button type="submit" class="uk-button uk-margin uk-padding uk-button-default" id="create-account">Create Account</button>
     </form>
+    
 </div>
 <script src="/js/createAccount.js"></script>

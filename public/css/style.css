@@ -1,0 +1,42 @@
+#formstyle {
+    border: 2px black !important;
+}
+
+#signhead {
+    background-color: #353535;
+    color: #D9D9D9;
+}
+
+body {
+    background-color: #D9D9D9;
+}
+
+
+.uk-margin1 {
+    width: 20%;
+    height: 10%;
+    padding: 10px;
+    margin: auto;
+    position: relative;
+       
+}
+
+#tier_id1 {
+    width: 20%;
+    height: 10%;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#create-account {
+    color: #D9D9D9;
+    background-color:#353535 ;
+    width: 20%;
+    height: 10%;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
