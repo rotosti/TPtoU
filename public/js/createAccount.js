@@ -11,8 +11,6 @@ const createAccountFormHandler = async (event) => {
     const zipcode = document.querySelector('#zipcode').value.trim();
     const tierchoice = document.querySelector('#tier_id').value;
 
-    console.log(email);
-
     if (email && password && firstname && lastname && address && city && state && zipcode && tierchoice) {
         const response = await fetch('/api/createaccount', {
             method: 'POST',
@@ -24,19 +22,7 @@ const createAccountFormHandler = async (event) => {
             document.location.replace("/dashboard");
           } else {
             alert("Failed to log in");
-          }
-        // if (response.ok) {
-        //     const response2 = await fetch('/api/login', {
-        //     method: 'POST',
-        //     body: JSON.stringify({ email, password }),
-        //     headers: { 'Content-Type': 'application/json' },
-        //   });
-
-        //     if (response2.ok) {
-        //         document.location.replace('/dashboard');
-        //     }
-        // }
-        
+          }      
     }
 }   
 

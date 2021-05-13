@@ -5,13 +5,11 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector("#password-login").value.trim();
 
   if (email && password) {
-    // console.log("about to send this to backend with fetch!!!", email, password);
     const response = await fetch("/api/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
-    // console.log(response);
 
     if (response.ok) {
       document.location.replace("/dashboard");

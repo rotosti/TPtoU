@@ -6,8 +6,6 @@
     <thead>
         <tr>
             <th>USER DETAILS </th>
-          
-     
         </tr>
     </thead>
     <tbody>
@@ -36,7 +34,6 @@
 </div>
 
 <div>
-
         <div class="uk-card uk-card-primary uk-card-body uk-text-center">
             <h3 class="uk-card-title">Current tier</h3>
             <p>{{currentSub.tier_name}}</p>
@@ -44,7 +41,7 @@
             <p>${{currentSub.price}} per Month</p>
         </div> 
 
-<div class="">
+<div>
         <select id="tier_id" class="uk-select uk-width-1-2 uk-margin-medium-bottom uk-margin-medium-top">
             {{#each notSub}}
             <option value='{{id}}'>{{tier_name}} / ${{price}} a month</option>
@@ -56,4 +53,3 @@
 <button class="uk-button uk-button-default" id="logout">Log Out</button>
 
 <script src="/js/logout.js"></script>
-

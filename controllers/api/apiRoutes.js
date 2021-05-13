@@ -24,13 +24,11 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    // console.log("validated password here", validPassword);
-
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.json({ user: userData, message: "You are now logged in!" });
+      res.end();
     });
   } catch (err) {
     res.status(400).json(err);
@@ -48,7 +46,6 @@ router.post("/logout", (req, res) => {
 });
 
 router.post("/createaccount", async (req, res) => {
-  console.log("request: ", req.body);
   try {
     const userData = await User.create({
       email: req.body.email,
@@ -65,10 +62,9 @@ router.post("/createaccount", async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.json({ user: userData, message: "You are now logged in!" });
+      res.end();
     })
     
-    // res.status(200).end();
   } catch (err) {
     res.json(err);
   }

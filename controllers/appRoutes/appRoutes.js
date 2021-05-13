@@ -7,8 +7,6 @@ router.get("/", async (req, res) => {
   const tiers = await Subtier.findAll({
     raw: true,
   });
-
-  // console.log("Tirers from db", tiers);
   res.render("landingpage", { tiers: tiers });
 });
 
@@ -21,7 +19,6 @@ router.get("/signup", async (req, res) => {
 });
 
 router.get("/dashboard", withAuth, async (req, res) => {
-  console.log("current user ",req.session);
   const userData = await User.findByPk(req.session.user_id,{raw:true});
   const currentSub = await Subtier.findByPk(userData.tier_id,{raw:true});
   const notSub = await Subtier.findAll({
@@ -31,7 +28,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
     }
   });
 
-    console.log("dashboard route working", notSub)
+    
   res.render("dashboard", {userData:userData, currentSub:currentSub, notSub:notSub});
 
 });
