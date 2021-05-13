@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const withAuth = require("../../utils/withAuth");
 const { User, Subtier } = require("../../models");
+const { raw } = require("express");
 
 router.get("/", async (req, res) => {
   const tiers = await Subtier.findAll({
@@ -20,16 +21,20 @@ router.get("/signup", async (req, res) => {
 });
 
 router.get("/dashboard", withAuth, async (req, res) => {
-  const userData = await User.findByPk(User.id);
-  const currentSub = await User.findByPk(User.tier_id);
+  console.log("current user ",req.session);
+  const userData = await User.findByPk(req.session.user_id,{raw:true});
+  const currentSub = await Subtier.findByPk(userData.tier_id,{raw:true});
   const notSub = await Subtier.findAll(
     { 
+      raw:true,
       attributes: 
       {exclude: [currentSub]},
     },
   );
-    console.log("dashboard route working", userData, currentSub, notSub)
-  res.render("dashboard", {user: userData, sub: currentSub, not: notSub});
+
+    console.log("dashboard route working", userData)
+  res.render("dashboard", {userData:userData, currentSub, notSub});
+
 });
 
 router.get("/account", withAuth, async (req, res) => {
