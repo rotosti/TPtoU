@@ -3,7 +3,7 @@ const { User } = require("../../models");
 
 router.post("/login", async (req, res) => {
   try {
-    // console.log("REQ .body!!!!!!!", req.body);
+    console.log("REQ .body!!!!!!!", req.body);
     const userData = await User.findOne({
       where: { email: req.body.email },
     });
