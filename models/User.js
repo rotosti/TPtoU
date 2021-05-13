@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
-const { create } = require('./Product');
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -74,8 +73,4 @@ User.init(
     }
 );
 
-
-
 module.exports = User;
-
-// upload 

@@ -50,10 +50,6 @@ body {
     color: black;
     width: 250px;
     height: 15%;
-    /* padding: 10px; */
-    /* margin: auto; */
-    /* display: flex;
-    justify-content: center; */
 }
 
 #landinghead {
@@ -81,4 +77,3 @@ body {
     display: flex;
     justify-content: center;
 }
-
