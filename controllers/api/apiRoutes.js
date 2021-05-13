@@ -2,7 +2,6 @@ const router = require("express").Router();
 const { User } = require("../../models");
 
 router.post("/login", async (req, res) => {
-  // console.log("WE HI THTE / LOGIN ROUTE!!!!!!!!!");
   try {
     // console.log("REQ .body!!!!!!!", req.body);
     const userData = await User.findOne({
@@ -48,10 +47,10 @@ router.post("/logout", (req, res) => {
   }
 });
 
-router.post("/createaccount", (req, res) => {
+router.post("/createaccount", async (req, res) => {
   console.log("request: ", req.body);
   try {
-    User.create({
+    const userData = await User.create({
       email: req.body.email,
       password: req.body.password,
       firstname: req.body.firstname,
@@ -60,8 +59,16 @@ router.post("/createaccount", (req, res) => {
       city: req.body.city,
       state: req.body.state,
       zipcode: req.body.zipcode,
-    });
-    res.status(200).json();
+      tier_id: req.body.tierchoice
+    })
+    req.session.save(()=> {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.json({ user: userData, message: "You are now logged in!" });
+    })
+    
+    // res.status(200).end();
   } catch (err) {
     res.json(err);
   }

@@ -29,7 +29,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
     },
   );
     console.log("dashboard route working", userData, currentSub, notSub)
-  res.render("dashboard", {userData, currentSub, notSub});
+  res.render("dashboard", {user: userData, sub: currentSub, not: notSub});
 });
 
 router.get("/account", withAuth, async (req, res) => {

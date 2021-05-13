@@ -21,20 +21,25 @@ const createAccountFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            const response2 = await fetch('/api/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: { 'Content-Type': 'application/json' },
-          });
+            document.location.replace("/dashboard");
+          } else {
+            alert("Failed to log in");
+          }
+        // if (response.ok) {
+        //     const response2 = await fetch('/api/login', {
+        //     method: 'POST',
+        //     body: JSON.stringify({ email, password }),
+        //     headers: { 'Content-Type': 'application/json' },
+        //   });
 
-            if (response2.ok) {
-                document.location.replace('/dashboard');
-            }
-        }
+        //     if (response2.ok) {
+        //         document.location.replace('/dashboard');
+        //     }
+        // }
         
     }
 }   
 
 document
 .querySelector('#sign-up-form')
-.addEventListener('click', createAccountFormHandler);
+.addEventListener('submit', createAccountFormHandler);
